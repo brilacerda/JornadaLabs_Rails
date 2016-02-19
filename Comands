@@ -1,0 +1,26 @@
+rvm - list 
+rvm use 2.2.1
+gem list
+rvm install ruby-2.2.0
+rvm gemset create nomeDaGemset / rvm gemset delete nomeDaGemSet
+rvm gemset use nomeDaGemset
+rvm current ##see whats the rvm and the gemset
+gem install --no-rdoc --no-ri rails ##installing  with no documentations
+rails new nomeProjeto
+cd nomeProjeto
+rails server
+ctrl + C ##exits rails server
+resources :nomedaentidade ##tudominusculo
+rake routes ## shows all the existent routes
+rails generate model <model_name>
+
+
+##Drop Table
+bundle exec rake db:rollback    #nem sempre
+
+#Reverse rails generate
+rails destroy model <name>
+rails destroy controller <name>
+rails destroy scaffold <name>
+
+rake db:drop:all

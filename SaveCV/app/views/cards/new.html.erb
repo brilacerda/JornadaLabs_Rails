@@ -1,0 +1,33 @@
+<h2>Cadastre um novo cartão de visita, <br> e nunca mais o perca.</h2>
+
+<br>
+<%= form_for :card, url:cards_path do |f| %> 
+	<p> 
+		<%= f.label :nome %><br> 
+		<%= f.text_field :nome %> 
+	</p> 
+
+	<p> 
+		<%= f.label :numero %><br> 
+		<%= f.text_field :numero %> 
+	</p> 
+		<p> 
+		<%= f.label :especialidade %><br> 
+		<%= f.text_field :especialidade %> 
+	</p> 
+
+	<p> 
+		<%= f.label :regiao %><br> 
+		<%= f.text_field :regiao %> 
+	</p> 
+		<p> 
+		<%= f.label :cartaodevisita %><br> 
+		<%= f.text_field :cartaodevisita %> 
+	</p> 
+
+	<p> 
+		<%= f.submit %> 
+	</p>
+<% end %>
+
+<%= link_to "Voltar para Meus Cartões", cards_path%>

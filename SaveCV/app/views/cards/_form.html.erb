@@ -1,0 +1,44 @@
+<%= form_for @card do |f| %>
+	<% if @card.errors.any? %>
+
+		<div id="error_explanation">
+			<h2>
+				<%=pluralize(@card.error.count, "Erro") %> 
+				ao salvar, verifique se os campos estão preenchidos corretamente
+			</h2>
+			<ul>
+				<%@card.errors.full.messages.each do |msg|%>		
+				<li><%=msg%></li>
+				<%end%>
+			</ul>
+		</div>	
+	<%end%>
+
+	<p> 
+		<%= f.label :nome %><br> 
+		<%= f.text_field :nome %> 
+	</p> 
+
+	<p> 
+		<%= f.label :numero %><br> 
+		<%= f.text_field :numero %> 
+	</p> 
+		<p> 
+		<%= f.label :especialidade %><br> 
+		<%= f.text_field :especialidade %> 
+	</p> 
+
+	<p> 
+		<%= f.label :regiao %><br> 
+		<%= f.text_field :regiao %> 
+	</p> 
+	<p> 	
+		<%= f.label :cartaodevisita %><br> 
+		<%= f.text_field :cartaodevisita %> 
+	</p> 
+
+	<p> 
+		<%= f.submit %> 
+	</p>
+
+<%end%>
