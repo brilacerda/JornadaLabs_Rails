@@ -1,4 +1,6 @@
 class Card < ActiveRecord::Base
+	validates :especialidade, :cartaodevisita, presence: true
+	validates :numero, uniqueness: true
 
-	has_many :reviews
+	belongs_to :user
 end
