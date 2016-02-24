@@ -2,11 +2,12 @@
 
 <table>
 	<tr> 
-		<th> nome </th>
-		<th> numero </th>
-		<th> especialidade </th>
-		<th> regiao </th>
-		<th> cartaodevisita </th>
+		<th> Nome </th>
+		<th> Numero </th>
+		<th> Especialidade </th>
+		<th> Regiao </th>
+		<th> Cartão de visita </th>
+		<th> Gerenciar cartão </th>
 	</tr> 
 
 	<% @cards.each do |card| %>
@@ -17,6 +18,9 @@
 		<td><%= card.regiao %> </td>
 		<td><%= card.cartaodevisita %> </td>
 		<td><%= link_to "Gerenciar Cartão",  edit_card_path(card)%> </td>
+		<td><%= link_to "Deletar",  card_path(card),
+							method: :delete,
+							data: {confirm: "Deseja mesmo deletar esse cartão?"} %> </td>
 	</tr>
 	<% end %>
 

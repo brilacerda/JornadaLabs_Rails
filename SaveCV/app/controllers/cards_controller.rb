@@ -11,8 +11,13 @@ class CardsController < ApplicationController
 	def create 
 		@card = Card.new(card_params)
 
-		@card.save
-		redirect_to @card
+		if @card.save
+			flash[:notice] = "Cartão cadastrado com sucesso" 
+			redirect_to @card
+		else 
+			@card.errors.messages
+			render action: :new
+		end
 	end 
 
 	def edit
@@ -22,7 +27,7 @@ class CardsController < ApplicationController
 	def update
 		@card = Card.find(params[:id])
 
-		if @card.update(book_params)
+		if @card.update(card_params)
 			redirect_to @card
 		else 
 			render 'edit'
@@ -30,10 +35,14 @@ class CardsController < ApplicationController
 	end
 
 	def show 
-		@card = Card.find(params[:id])
+		@card = Card.find(params[:id]) 
 	end 
 
-	def destroy 
+	def destroy
+		@card = Card.find(params[:id])
+		@card.destroy
+
+		redirect_to cards_path
 	end
 
 	private

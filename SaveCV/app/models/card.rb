@@ -1,6 +1,9 @@
 class Card < ActiveRecord::Base
-	validates :especialidade, :cartaodevisita, presence: true
+	
+	validates :especialidade, presence: {message: 'Para facilitar as pesquisas, digite a especialidade do profissional'}
+	validates :cartaodevisita, presence: {message: 'Não pode ser vazio'}
 	validates :numero, uniqueness: true
 
-	belongs_to :user
+	has_many :reviews
+
 end

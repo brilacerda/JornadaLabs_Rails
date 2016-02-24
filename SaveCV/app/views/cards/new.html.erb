@@ -1,7 +1,8 @@
 <h2>Cadastre um novo cartão de visita, <br> e nunca mais o perca.</h2>
 
 <br>
-<%= form_for :card, url:cards_path do |f| %> 
+
+<%= form_for :card, url: cards_path do |f| %> 
 	<p> 
 		<%= f.label :nome %><br> 
 		<%= f.text_field :nome %> 

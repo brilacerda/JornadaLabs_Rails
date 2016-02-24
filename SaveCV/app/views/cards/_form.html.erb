@@ -3,11 +3,11 @@
 
 		<div id="error_explanation">
 			<h2>
-				<%=pluralize(@card.error.count, "Erro") %> 
+				<%=pluralize(@card.errors.count, "Erro") %> 
 				ao salvar, verifique se os campos estão preenchidos corretamente
 			</h2>
 			<ul>
-				<%@card.errors.full.messages.each do |msg|%>		
+				<%@card.errors.full_messages.each do |msg|%>		
 				<li><%=msg%></li>
 				<%end%>
 			</ul>
