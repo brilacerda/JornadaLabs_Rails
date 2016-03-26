@@ -7,6 +7,7 @@ rvm gemset use nomeDaGemset
 rvm current ##see whats the rvm and the gemset
 gem install --no-rdoc --no-ri rails ##installing  with no documentations
 rails new nomeProjeto
+bundle show [gemname]` to see where a bundled gem is installed
 cd nomeProjeto
 rails server
 ctrl + C ##exits rails server
