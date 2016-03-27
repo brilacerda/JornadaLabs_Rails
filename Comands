@@ -25,3 +25,8 @@ rails destroy controller <name>
 rails destroy scaffold <name>
 
 rake db:drop:all
+
+
+--restart
+gem install bundler
+bundle instal
